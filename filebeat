@@ -1,0 +1,19 @@
+# filebeat.yml
+
+filebeat.inputs:
+    - type: log
+        enabled: true
+        paths:
+            - /path/to/your/logs/*.log
+            - /var/log/rng.log
+            - /var/log/hasher.log
+            - /var/log/worker.log
+            - /var/log/webui.log
+
+output.logstash:
+    hosts: ["logstash:5044"]
+
+output.elasticsearch:
+    hosts: ["http://localhost:9200"]
+
+
